@@ -3,7 +3,7 @@ module COMAgent
 go 1.23.2
 
 require (
-	github.com/dmznlin/znlib-go v0.0.4
+	github.com/dmznlin/znlib-go v0.0.5-0.20241115082805-85c033c2630e
 	github.com/gin-gonic/gin v1.10.0
 )
 

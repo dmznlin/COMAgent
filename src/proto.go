@@ -109,50 +109,50 @@ type (
 
 	//  DEVICEHW_CONFIG
 	DEVICEHW_CONFIG struct {
-		DevType        uchar     /* 设备类型,具体见设备类型表 */
-		AuxDevType     uchar     /* 设备子类型 */
-		Index          uchar     /* 设备序号 */
-		DevHardwareVer uchar     /* 设备硬件版本号 */
-		DevSoftwareVer uchar     /* 设备软件版本号 */
-		Modulename     [21]uchar /* 模块名*/
-		DevMAC         [6]uchar  /* 模块网络MAC地址 */
-		DevIP          [4]uchar  /* 模块IP地址*/
-		DevGWIP        [4]uchar  /* 模块网关IP */
-		DevIPMask      [4]uchar  /* 模块子网掩码 */
-		DhcpEnable     uchar     /* DHCP 使能，是否启用DHCP,1:启用，0：不启用*/
-		WebPort        uchar     /* WEB网页地址 */
-		Username       [8]uchar  /* 用户名同模块名*/
-		PassWordEn     uchar     /*密码使能 1：使能 0： 禁用*/
-		zPassWord      [8]uchar  /* 密码*/
-		UpdateFlag     uchar     /* 固件升级标志，1：升级 0：不升级*/
-		ComcfgEn       uchar     /*串口协商进入配置模式使能，1：使能 0:不使能 */
-		Reserved       [8]uchar  /* 保留*/
+		DevType        uchar    /* 设备类型,具体见设备类型表 */
+		AuxDevType     uchar    /* 设备子类型 */
+		Index          uchar    /* 设备序号 */
+		DevHardwareVer uchar    /* 设备硬件版本号 */
+		DevSoftwareVer uchar    /* 设备软件版本号 */
+		Modulename     string   `struct:"[21]byte"` /* 模块名*/
+		DevMAC         [6]uchar /* 模块网络MAC地址 */
+		DevIP          [4]uchar /* 模块IP地址*/
+		DevGWIP        [4]uchar /* 模块网关IP */
+		DevIPMask      [4]uchar /* 模块子网掩码 */
+		DhcpEnable     uchar    /* DHCP 使能，是否启用DHCP,1:启用，0：不启用*/
+		WebPort        uchar    /* WEB网页地址 */
+		Username       string   `struct:"[8]byte"` /* 用户名同模块名*/
+		PassWordEn     uchar    /*密码使能 1：使能 0： 禁用*/
+		PassWord       string   `struct:"[8]byte"` /* 密码*/
+		UpdateFlag     uchar    /* 固件升级标志，1：升级 0：不升级*/
+		ComcfgEn       uchar    /*串口协商进入配置模式使能，1：使能 0:不使能 */
+		Reserved       [8]uchar /* 保留*/
 	}
 
 	DeviceHWConfigS = DEVICEHW_CONFIG
 
 	DEVICEPORT_CONFIG struct {
-		Index           uchar     /* 端口序号 */
-		PortEn          uchar     /* 端口启用标志 1：启用后 ；0：不启用 */
-		NetMode         uchar     /* 网络工作模式: 0: TCP SERVER;1: TCP CLENT; 2: UDP SERVER 3：UDP CLIENT; */
-		RandSportFlag   uchar     /* TCP 客户端模式下随即本地端口号，1：随机 0: 不随机*/
-		NetPort         ushort    /* 网络通讯端口号 */
-		DesIP           [4]uchar  /* 目的IP地址 */
-		DesPort         ushort    /* 工作于TCP Server模式时，允许外部连接的端口号 */
-		BaudRate        ulong     /* 串口波特率: 300---921600bps */
-		DataSize        uchar     /* 串口数据位: 5---8位 */
-		StopBits        uchar     /* 串口停止位: 1表示1个停止位; 2表示2个停止位 */
-		Parity          uchar     /* 串口校验位: 0表示奇校验; 1表示偶校验; 2表示标志位(MARK,置1); 3表示空白位(SPACE,清0);  */
-		PHYChangeHandle uchar     /* PHY断开，Socket动作，1：关闭Socket 2、不动作*/
-		RxPktlength     ulong     /* 串口RX数据打包长度，最大1024 */
-		RxPktTimeout    ulong     /* 串口RX数据打包转发的最大等待时间,单位为: 10ms,0则表示关闭超时功能 */
-		ReConnectCnt    uchar     /* 工作于TCP CLIENT时，连接TCP SERVER的最大重试次数*/
-		ResetCtrl       uchar     /* 串口复位操作: 0表示不清空串口数据缓冲区; 1表示连接时清空串口数据缓冲区 */
-		DNSFlag         uchar     /* 域名功能启用标志，1：启用 2：不启用*/
-		Domainname      [20]uchar /* 域名*/
-		DNSHostIP       [4]uchar  /* DNS 主机*/
-		DNSHostPort     ushort    /* DNS 端口*/
-		Reserved        [8]uchar  /* 保留*/
+		Index           uchar    /* 端口序号 */
+		PortEn          uchar    /* 端口启用标志 1：启用后 ；0：不启用 */
+		NetMode         uchar    /* 网络工作模式: 0: TCP SERVER;1: TCP CLENT; 2: UDP SERVER 3：UDP CLIENT; */
+		RandSportFlag   uchar    /* TCP 客户端模式下随即本地端口号，1：随机 0: 不随机*/
+		NetPort         ushort   /* 网络通讯端口号 */
+		DesIP           [4]uchar /* 目的IP地址 */
+		DesPort         ushort   /* 工作于TCP Server模式时，允许外部连接的端口号 */
+		BaudRate        ulong    /* 串口波特率: 300---921600bps */
+		DataSize        uchar    /* 串口数据位: 5---8位 */
+		StopBits        uchar    /* 串口停止位: 1表示1个停止位; 2表示2个停止位 */
+		Parity          uchar    /* 串口校验位: 0表示奇校验; 1表示偶校验; 2表示标志位(MARK,置1); 3表示空白位(SPACE,清0);  */
+		PHYChangeHandle uchar    /* PHY断开，Socket动作，1：关闭Socket 2、不动作*/
+		RxPktlength     ulong    /* 串口RX数据打包长度，最大1024 */
+		RxPktTimeout    ulong    /* 串口RX数据打包转发的最大等待时间,单位为: 10ms,0则表示关闭超时功能 */
+		ReConnectCnt    uchar    /* 工作于TCP CLIENT时，连接TCP SERVER的最大重试次数*/
+		ResetCtrl       uchar    /* 串口复位操作: 0表示不清空串口数据缓冲区; 1表示连接时清空串口数据缓冲区 */
+		DNSFlag         uchar    /* 域名功能启用标志，1：启用 2：不启用*/
+		Domainname      string   `struct:"[20]byte"` /* 域名*/
+		DNSHostIP       [4]uchar /* DNS 主机*/
+		DNSHostPort     ushort   /* DNS 端口*/
+		Reserved        [8]uchar /* 保留*/
 	}
 
 	DevicePortConfigS = DEVICEPORT_CONFIG

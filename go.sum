@@ -15,8 +15,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f h1:lO4WD4F/rVNCu3HqELle0jiPLLBs70cWOduZpkS1E78=
 github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f/go.mod h1:cuUVRXasLTGF7a8hSLbxyZXjz+1KgoB3wDUb6vlszIc=
-github.com/dmznlin/znlib-go v0.0.4 h1:vH5/adQQ8GkHCYAu79UqcSQZA2E7yo8NHTdDkGeQHNI=
-github.com/dmznlin/znlib-go v0.0.4/go.mod h1:xeJ951fsW/CnY1oWqChhNqz0+XX5bp0nGK4RwPV95fU=
+github.com/dmznlin/znlib-go v0.0.5-0.20241115082805-85c033c2630e h1:Y/mCfKvdPiAHqjtpTQHBgi3O9aN0MO67yXvgP/VdpW8=
+github.com/dmznlin/znlib-go v0.0.5-0.20241115082805-85c033c2630e/go.mod h1:ngMDo7z/WSDSVsxf3iTnmDvf4rIFLks4Td2dljOl9TE=
 github.com/eclipse/paho.mqtt.golang v1.4.3 h1:2kwcUGn8seMUfWndX0hGbvH8r7crgcJguQNCyp70xik=
 github.com/eclipse/paho.mqtt.golang v1.4.3/go.mod h1:CSYvoAlsMkhYOXh/oKyxa8EcBci6dVkLCbo5tTC1RIE=
 github.com/fastly/go-utils v0.0.0-20180712184237-d95a45783239 h1:Ghm4eQYC0nEPnSJdVkTrXpu9KtoVCSo1hg7mtI7G9KU=
